@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <div>
+    <h4 class="mt-4 mb-5 border-bottom" style="color: green;">アニマル推定結果：{{ animal_info.animal_name }}</h4>
+    <table class='table'>
+      <tbody>
+        <tr>
+          <td>項目</td>
+          <td>結果</td>
+        </tr>
+        <tr>
+          <td>画像ファイル</td>
+          <td><img src={{ img_url }} alt="画像が見つかりませんでした。"></img></td>
+        </tr>
+        <tr>
+          <td>信頼度</td>
+          <td>{{ y_proba }} % </td>
+        </tr>
+        <tr>
+          <td>アニマル豆知識</td>
+          <td>{{ animal_info.animal_title }} </td>
+        </tr>
+        <tr>
+          <td>詳細</td>
+          <td>{{ animal_info.animal_disc }} </td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="{% url 'classify' %}" class="btn btn-success" style=margin-top:30px;>画像選択メニューに戻る</a>
+  </div>
+
+{% endblock %}
