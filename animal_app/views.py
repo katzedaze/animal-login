@@ -114,8 +114,11 @@ def signup(request):
             if new_user is not None:
                 # new_user の情報からログイン処理を行う
                 login(request, new_user)
-                # ログイン後のリダイレクト処理
-                return redirect('../classify.html')
+                # ログイン後のリダイレクト処理(Heroku)
+                return redirect(
+                    'https://fairy-animalapp-login.herokuapp.com/classify/')
+                # ログイン後のリダイレクト処理(ローカル)
+                # return redirect('../classify.html')
     # POST で送信がなかった場合の処理
     else:
         form = SignUpForm()
