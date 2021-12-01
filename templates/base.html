@@ -16,6 +16,15 @@
         <h3>アニマル図鑑</h3>
         <span>パンダ、ゾウ、ホッキョクグマ、ゴリラ</span>
       </a>
+      <!-- ログアウト機能の追加 -->
+      {% if user.is_authenticated %}
+      <span style="font-size: 15px; text-align: right">
+        <!-- ログアウトのURLに移動するように処理 -->
+        <a href="{% url 'logout' %}" style="color: white; text-decoration: underline">
+          ようこそ {{ user.username }} さん
+        </a>
+      </span>
+      {% endif %}
     </nav>
 
     <div class="contents" style="margin: 0 20px">{% block content %} {% endblock %}</div>

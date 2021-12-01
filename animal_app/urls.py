@@ -5,7 +5,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.classify, name='classify'),
+    path('classify/', views.classify, name='classify'),
+    path('', views.Login.as_view(), name='login'),
+    path('logout/', views.Logout.as_view(), name='logout'),
+    path('signup/', views.signup, name='signup'),
 ]
 
 # mediaディレクトリの画像表示のため

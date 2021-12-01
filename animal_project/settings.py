@@ -131,6 +131,14 @@ MEDIA_URL = '/media/'
 # サーバから見たメディアルートの絶対パス
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# LOGIN
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'classify'
+
+# ログアウト後ログインページにリダイレクト
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
